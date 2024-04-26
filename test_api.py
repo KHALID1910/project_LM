@@ -203,6 +203,10 @@ def predict_image(image_bytes):
 
     return top5_classes, top5_values
 
+@app.head("/", response_class=HTMLResponse)
+def head_root():
+    return {}
+
 @app.get("/", response_class=HTMLResponse)
 def upload_page():
     return """
